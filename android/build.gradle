@@ -31,7 +31,4 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
-    if (project.android.hasProperty('namespace')) {
-        namespace 'com.oversketch.open_app_settings'
-    }
 }
