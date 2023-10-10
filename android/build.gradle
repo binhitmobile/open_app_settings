@@ -4,30 +4,34 @@ version '1.0'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:8.1.1'
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    namespace 'com.oversketch.open_app_settings'
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 23
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+    if (project.android.hasProperty('namespace')) {
+        namespace 'com.oversketch.open_app_settings'
     }
 }
